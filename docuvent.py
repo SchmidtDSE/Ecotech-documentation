@@ -1,21 +1,20 @@
-"""
-Will the potato explode in the microwave? Today, we find out.
-"""
+
 
 # TODO: This code is very badly documented! Please help to clean it up so that we can properly test our potatoes.
+# You do not need to run the code.
 
-def one(potato):
+def one(weight):
     """
     # ¯\_(ツ)_/¯ Good luck, future developer.
     """
-    if potato['weight'] < 0.3:
+    if weight < 0.3:
         return "Small"
-    elif (potato['weight'] >= 0.3 & potato['weight'] < 0.6):
+    elif (weight >= 0.3 & weight < 0.6):
         return "Medium"
     else:
         return "A Chonker" # i wonder what shape this potato is
 
-# how long to microwave the potato
+# minutes
 def beep_boop_vrrrr(x):
     if x < 1:
         return "short"
@@ -25,15 +24,15 @@ def beep_boop_vrrrr(x):
         return "long"
     
 # another function
-def something(holes):
-    if holes == 'yes': # what did we poke the holes with?
+def something(holes_ithink):
+    if holes_ithink == 'yes': # what did we poke the holes with?
         return True
     else:
         return False
     
 # i hope this code runs
 def boom(potato):
-    if one(potato) == "Small":
+    if one(potato['weight']) == "Small":
         if beep_boop_vrrrr(potato['time']) == "short" or beep_boop_vrrrr(potato['time']) == "medium":
             return "Boooo. Boring."
         else:
@@ -41,11 +40,14 @@ def boom(potato):
                 return "I wonder if it will be tasty."
             else:
                 return "Today, we test the limits of this tiny potato."
-    elif one(potato) == "Medium":
+    elif one(potato['weight']) == "Medium":
         if beep_boop_vrrrr(potato['time']) == "short":
             return "Boooo. Boring."
         elif beep_boop_vrrrr(potato['time']) == "medium":
-            return "Hmmmmm. Interesting."
+            if something(potato['holes']):
+                return "Hmmmmm. Interesting."
+            else:
+                return "I wonder if it will be tasty."
         else:
             return "A science experiment in the making!"
     # a chonker
@@ -53,6 +55,9 @@ def boom(potato):
         if beep_boop_vrrrr(potato['time']) == "short":
             return "Boooo. Boring."
         elif beep_boop_vrrrr(potato['time']) == "medium":
-            return "You only live once. Microwave it."
+            if something(potato['holes']):
+                return "Hmmmmm. Interesting."
+            else: 
+                return "You only live once."
         else:
             return "Boom boom pow pow! Might need a new microwave."
