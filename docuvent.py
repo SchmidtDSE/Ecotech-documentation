@@ -22,6 +22,8 @@ def beep_boop_vrrrr(x):
         return "medium"
     elif (x >= 3 & x < 5):
         return "long"
+    else:
+        return "very long"
     
 # another function
 def something(holes_ithink):

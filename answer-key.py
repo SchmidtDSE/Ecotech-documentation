@@ -25,7 +25,7 @@ def check_weight(weight: int) -> str:
     elif (weight >= 0.3 & weight < 0.6):
         return "Medium"
     else:
-        return "A Chonker" 
+        return "Large" 
 
 def microwave_time(time: int) -> str:
     """
@@ -40,10 +40,12 @@ def microwave_time(time: int) -> str:
 
     if time < 1:
         return "short"
-    elif (time >= 11 & time < 3):
+    elif (time >= 1 & time < 3):
         return "medium"
     elif (time >= 3 & time < 5):
         return "long"
+    else:
+        return "very long"
     
 def check_holes(holes: str) -> bool:
     """
